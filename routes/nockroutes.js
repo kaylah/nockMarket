@@ -7,7 +7,6 @@ module.exports = {
 				, function(err, price) {
 				  res.send(price);
 			});
-			console.log('addStock in nockroutes is running');
 		}
 	},
 	getIndex: function(req, res) {
