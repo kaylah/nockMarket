@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Nockmarket</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="http://spbooks.github.com/nodejs1/docs.css" rel="stylesheet">
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=sunburst"></script>
+	<script type="text/javascript" src="http://spbooks.github.com/nodejs1/jquery.js"></script>
+	<script type="text/javascript" src="http://spbooks.github.com/nodejs1/bootstrap-button.js"></script>
+	<script type="text/javascript" src="http://spbooks.github.com/nodejs1/bootstrap-modal.js"></script>
+	<script type="text/javascript" src="http://spbooks.github.com/nodejs1/bootstrap-transition.js"></script>
+	<script type="text/javascript" src="/js/nockclient.js"></script>
+</head>
+<body>
+	<div id="myModal" class="modal fade smallModal">
+		<form id="signup-form" action="/signup" method="post" class="form-horizontal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+				  <div class="modal-header">
+				    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				    <h4 class="modal-title">Sign Up Today</h4>
+				  </div>
+				  <div class="modal-body">
+				    <fieldset>
+				    	<div class="input-group input-group-lg">
+						  <span class="input-group-addon">Username</span>
+						  <input type="text" name="username" placeholder="Don't use your email" class="form-control uname" placeholder="Username">
+						</div>
+						<div id="imagePlaceHolder"></div>
+						<br />
+						<div class="input-group input-group-lg">
+						  <span class="input-group-addon">Email</span>
+						  <input type="text" name="email" placeholder="what@isyouremail.com" class="form-control" placeholder="Email">
+						</div>
+						<br />
+						<div class="input-group input-group-lg">
+						  <span class="input-group-addon">Password</span>
+						  <input type="password" name="password" placeholder="*******" class="form-control uname" placeholder="Password">
+						</div>
+					</fieldset>
+				  </div>
+				  <div class="modal-footer">
+				    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				    <button class="btn btn-primary create-button" type="submit">Create Account</button>
+				  </div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</form>
+	</div><!-- /.modal -->
+
+	<div id="loginModal" class="modal fade smallModal">
+		<form id="login-form" action="/login" method="post" class="form-horizontal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">Log In</h4>
+					</div>
+					<div class="modal-body">
+						<fieldset>
+							<div class="input-group input-group-lg">
+							  <span class="input-group-addon">Username</span>
+							  <input type="text" name="username" placeholder="Not your email" class="form-control uname" placeholder="Username">
+							</div>
+							<div id="imagePlaceHolder"></div>
+							<br />
+							<div class="input-group input-group-lg">
+							  <span class="input-group-addon">Password</span>
+							  <input type="password" name="password" placeholder="*******" class="form-control uname" placeholder="Password">
+							</div>
+						</fieldset>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				    	<button class="btn btn-primary" type="submit">Log In</button>
+					</div>
+				</div>
+			</div>
+		</form> 
+	</div>
+
+	<div class="container">
+		<div class="marketing"><h1>Nockmarket</h1>
+			<p class="marketing-byline">Welcome to the Node.js stockmarket</p>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-2"><img src="https://raw.githubusercontent.com/hugoroy/anti-tracking/master/bootstrap/docs/assets/img/glyphicons/glyphicons_079_podium.png" class="bs-icon" alt="">
+					<h2>Real Prices</h2>
+					<p>Here you will be able to sign up for an account and create a stock portfolio with live prices. This will combine the beauty of Bootstrap with the performance of Node.js to create a well designed, blazing fast stock tracking tool.</p>
+				</div>
+				<div class="col-md-4"><img src="http://raw.githubusercontent.com/hugoroy/anti-tracking/master/bootstrap/docs/assets/img/glyphicons/glyphicons_266_book_open.png" class="bs-icon" alt="">
+					<h2>Live Data</h2>
+					<p>We will also construct a dummy portfolio to show you how to stream real-time data straight into your browser. Once you have mastered the basics you will be able to stream any type of data from tweets, to chat to auction data.</p>
+				</div>
+			</div>
+		</div>
+		<header class="jumbotron masthead">
+			<div class="inner">
+				<p class="download-info">
+					<a data-toggle="modal" href="#loginModal" class="btn btn-default btn-lg">Log In</a> <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Sign Up</a>
+				</p>
+			</div>
+		</header>
+	</div>
+</body>
+</html>
