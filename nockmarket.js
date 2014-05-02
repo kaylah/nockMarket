@@ -3,7 +3,9 @@
 var exchangeData = {}
   , db = require('./lib/db')
   , express = require('express')
+  , http = require('http')
   ,	exch = require('./lib/exchange')
+  , io = require('socket.io')
   ,	nocklib = require('./lib/nocklib')
   , nockroutes = require('./routes/nockroutes.js')
   ,	timeFloor = 500
@@ -38,12 +40,13 @@ function submitRandomOrder() {
 	}
 }
 
-var app = express();
+var app = express()
+  , server = http.createServer(app);
 
 app.configure(function () {
 	app.use(express.bodyParser());
-	app.use(express.cookieParser());
-	app.use(express.session({secret: 'secretpasswordforsessions'}));
+	app.use(express.cookieParser('secretpasswordforsessions'));
+	app.use(express.session({store: nocklib.getSessionStore()}));
 	app.set('views', __dirname + '/views');
 	app.set('view engine', 'ejs');
 	app.use(express.static(__dirname + '/public'));
@@ -87,6 +90,8 @@ app.get('/api/trades', function(req, res) {
 });
 
 db.open(function() {
+	nocklib.createSocket(server);
 	submitRandomOrder();
-	app.listen(3000);
+	//server.listen(8000);
+	server.listen(3000);
 });

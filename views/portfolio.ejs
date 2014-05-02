@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="http://spbooks.github.com/nodejs1/docs.css" rel="stylesheet">
+	<link href="/stylesheets/style.css" rel="stylesheet">
 	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=sunburst"></script>
 	<script type="text/javascript" src="http://spbooks.github.com/nodejs1/jquery.js"></script>
 	<script type="text/javascript" src="http://spbooks.github.com/nodejs1/bootstrap-button.js"></script>
@@ -13,6 +14,8 @@
 	<script type="text/javascript" src="http://spbooks.github.com/nodejs1/bootstrap-transition.js"></script>
 	<script type="text/javascript" src="/js/bootstrap-tab.js"></script>
 	<script type="text/javascript" src="/js/portfolio.js"></script>
+	<script type="text/javascript" src="http://localhost:3000/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="/js/chat.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -50,6 +53,8 @@
 				      <p>Howdy, I'm in Section 2.</p>
 				    </div>
 				    <div class="tab-pane" id="tab3">
+				    	<br>
+				    	<p><button class="btn btn=info btn-lg btn-primary" type="button" id="join-chat">Join Chat</button></p>
 				    	<p><textarea class="input-xlarge col-md-8 chat-widget" id="textarea" rows="20"></textarea></p>
 				    	<p><input type="text" class="input-xlarge col-md-8 chat-widget" id="input01" placeholder="Enter your message"></p>
 				    	<p><button type="submit" class="btn btn-primary chat-widget" id="send-chat">Send</button></p>

@@ -1,7 +1,7 @@
 var checkUsername = function() {
-	var $username = $('.uname')
-	  , $imageHolder = $('#imagePlaceHolder')
-	  ,	$button = $('.create-button');
+	var $username = $('#signup-form .uname')
+	  , $imageHolder = $('#signup-form #imagePlaceHolder')
+	  ,	$button = $('#signup-form .create-button');
 	$username.blur(function(e) {
 		$.ajax({
 			type: 'GET'
