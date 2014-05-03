@@ -16,6 +16,8 @@
 	<script type="text/javascript" src="/js/portfolio.js"></script>
 	<script type="text/javascript" src="http://localhost:3000/socket.io/socket.io.js"></script>
 	<script type="text/javascript" src="/js/chat.js"></script>
+	<script type="text/javascript" src="/js/trades.js"></script>
+	<script type="text/javascript" src="/js/account.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -28,6 +30,7 @@
 				    <li class="active"><a href="#tab1" data-toggle="tab">Portfolio</a></li>
 				    <li><a href="#tab2" data-toggle="tab">Nockmarket</a></li>
 				    <li><a href="#tab3" data-toggle="tab" id="chat-tab">Chat</a></li>
+				    <li><a href="#tab4" data-toggle="tab">My Account</a></li>
 				  </ul>
 				  <div class="tab-content" style="padding-bottom: 9px; border-bottom: 1px solid #ddd;">
 				    <div class="tab-pane active" id="tab1">
@@ -58,6 +61,12 @@
 				    	<p><textarea class="input-xlarge col-md-8 chat-widget" id="textarea" rows="20"></textarea></p>
 				    	<p><input type="text" class="input-xlarge col-md-8 chat-widget" id="input01" placeholder="Enter your message"></p>
 				    	<p><button type="submit" class="btn btn-primary chat-widget" id="send-chat">Send</button></p>
+				    	<p><span class="label label-default chat-widget" id="online">Online:</span><div id="users"></div></p>
+				    </div>
+				    <div class="tab-pane" id="tab4">
+				    	<p><input type="text" class="input-xlarge col-md-8" id="email" value="<%= email %>"></p>
+				    	<br><br>
+				    	<p><button type="submit" class="btn btn-primary" id="update-account">Update</button></p>
 				    </div>
 				  </div>
 				</div>
