@@ -31,7 +31,8 @@ function submitRandomOrder(index) {
 				trade.stock = stocks[index];
 				return trade;
 			});
-			nocklib.sendTrades(exchangeData.trades);
+			//nocklib.sendTrades(exchangeData.trades);
+			nocklib.sendExchangeData(stocks[index], exchangeData);
 			db.insert('transactions', trades, function(err, trades) {
 				pauseThenTrade();
 			});
