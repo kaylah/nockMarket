@@ -111,7 +111,8 @@ app.use(function(req, res) {
 
 db.open(function() {
 	nocklib.createSocket(server);
-	server.listen(3000);
+	var port = process.env.PORT || 3000;
+	server.listen(port);
 	for (var i=0; i < stocks.length; i++) {
 		submitRandomOrder(i);
 	}
